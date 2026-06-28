@@ -1,0 +1,316 @@
+/* wizardbrew-style.css */
+
+/* WizardBrew Universal Style Template */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(135deg, #ffccbc, #ffe0b2, #f8bbd0, #d1c4e9);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.profile-action-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+header a img {
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+header a img:hover {
+    transform: scale(1.05);
+}
+
+#notifyBtn {
+    background: linear-gradient(to right, #42a5f5, #1e88e5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin-top: 15px;
+    font-size: 2rem;
+    color: #6a1b9a;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.bubble-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.bubble {
+    background: linear-gradient(to bottom right, #81d4fa, #4fc3f7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.bubble:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to bottom right, #4fc3f7, #0288d1);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1400px;
+    /* Table size wizard-stle mai change */
+    margin: auto;
+}
+
+h2 {
+    color: #0078d4;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin: 0.5rem 0 1rem;
+}
+
+pre {
+    background: linear-gradient(to right, #fce4ec, #f3e5f5);
+    padding: 1rem;
+    border-left: 5px solid #ec407a;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    background: linear-gradient(to bottom right, #ffffff, #f3e5f5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #ce93d8, #f48fb1);
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .profile-action-container {
+        flex-direction: column;
+    }
+}
+
+/* Verify badge styling */
+#verifyBtn {
+    background: linear-gradient(to right, #f48fb1, #ce93d8);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#verifyBtn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Pink-box wrapper for each step */
+.pink-step {
+    background: #fce4ec;
+    border: 2px solid #ce93d8;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Git Commands Table Enhancements */
+.step table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.step thead th {
+    background: linear-gradient(to right, #ce93d8, #f48fb1);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.8rem 1rem;
+}
+
+.step th,
+.step td {
+    padding: 1.5rem 2rem;
+    /* Table size of cell*/
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.step tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.step tbody tr:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.step code {
+    display: inline-block;
+    background: linear-gradient(to right, #fce4ec, #f3e5f5);
+    color: #6a1b9a;
+    padding: 0.2rem 0.5rem;
+    border-left: 3px solid #ec407a;
+    border-radius: 4px;
+    font-family: Consolas, Menlo, monospace;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+
+/*Star explained Code*/
+
+:root {
+    --star-color: #ff0707;
+    --hover-scale: 1.2;
+}
+
+.star-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--star-color);
+    text-decoration: none;
+    font-weight: 900;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.star-link:hover {
+    opacity: 0.8;
+}
+
+.star-link:hover {
+    transform: scale(var(--hover-scale));
+}
+
+
+
+
+/* Let pink-step’s background show through its table */
+.pink-step table {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Responsive tables */
+@media (max-width: 600px) {
+
+    .step table,
+    .step thead,
+    .step tbody,
+    .step th,
+    .step td,
+    .step tr {
+        display: block;
+    }
+
+    .step thead {
+        float: left;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .step tr {
+        margin-bottom: 1rem;
+    }
+
+    .step td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .step td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 0.75rem;
+        font-weight: bold;
+        color: #0078d4;
+    }
+
+    /* make columns fixed-width proportions */
+    .step table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .step th:nth-child(1),
+    .step td:nth-child(1) {
+        width: 25%;
+    }
+
+    .step th:nth-child(2),
+    .step td:nth-child(2) {
+        width: 45%;
+    }
+
+    .step th:nth-child(3),
+    .step td:nth-child(3) {
+        width: 30%;
+    }
+}
