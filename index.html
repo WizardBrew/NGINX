@@ -1,121 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NGINX Setup Guide</title>
-  <!-- Link to your CSS -->
-  <link rel="stylesheet" href="wizardbrew-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WizardBrew Demo</title>
+
+    <!-- Link your CSS -->
+    <link rel="stylesheet" href="wizardbrew-style.css">
 </head>
+
 <body>
 
-  <header>
-    <div class="profile-action-container">
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg" alt="NGINX Logo"></a>
-      <button id="notifyBtn">Notify Me</button>
-      <button id="verifyBtn">Verify Setup</button>
-    </div>
-    <h1>🚀 NGINX Setup Guide (Ubuntu)</h1>
-    <div class="bubble-container">
-      <a href="#install" class="bubble">Install</a>
-      <a href="#service" class="bubble">Service</a>
-      <a href="#server-block" class="bubble">Server Block</a>
-      <a href="#reverse-proxy" class="bubble">Reverse Proxy</a>
-      <a href="#ssl" class="bubble">SSL</a>
-    </div>
-  </header>
+    <!-- =========================
+         HEADER SECTION
+    ========================== -->
+    <header>
 
-  <main>
-    <!-- Step 1 -->
-    <section id="install" class="step pink-step">
-      <h2>Step 1: Install NGINX</h2>
-      <p>Update packages and install NGINX:</p>
-      <pre><code>sudo apt update
-sudo apt install nginx -y</code></pre>
-    </section>
+        <div class="profile-action-container">
 
-    <!-- Step 2 -->
-    <section id="service" class="step">
-      <h2>Step 2: Manage Service</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Command</th>
-            <th>Description</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Command"><code>systemctl start nginx</code></td>
-            <td data-label="Description">Start NGINX service</td>
-            <td data-label="Example">sudo systemctl start nginx</td>
-          </tr>
-          <tr>
-            <td><code>systemctl enable nginx</code></td>
-            <td>Enable on boot</td>
-            <td>sudo systemctl enable nginx</td>
-          </tr>
-          <tr>
-            <td><code>nginx -t</code></td>
-            <td>Test configuration</td>
-            <td>sudo nginx -t</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+            <a href="#">
+                <img src="https://via.placeholder.com/120"
+                     alt="Profile Image">
+            </a>
 
-    <!-- Step 3 -->
-    <section id="server-block" class="step pink-step">
-      <h2>Step 3: Create Server Block</h2>
-      <p>Create a file in <code>/etc/nginx/sites-available/example</code>:</p>
-      <pre><code>server {
-    listen 80;
-    server_name example.com www.example.com;
-    root /var/www/example;
-    index index.html;
+            <button id="notifyBtn">
+                🔔 Notify Me
+            </button>
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}</code></pre>
-      <p>Enable it:</p>
-      <pre><code>sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx</code></pre>
-    </section>
+            <button id="verifyBtn">
+                ✔ Verified
+            </button>
 
-    <!-- Step 4 -->
-    <section id="reverse-proxy" class="step">
-      <h2>Step 4: Reverse Proxy</h2>
-      <p>Forward traffic to a backend app (Node.js on port 3000):</p>
-      <pre><code>server {
-    listen 80;
-    server_name app.example.com;
+        </div>
 
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}</code></pre>
-    </section>
+        <h1>🧙 WizardBrew Documentation</h1>
 
-    <!-- Step 5 -->
-    <section id="ssl" class="step pink-step">
-      <h2>Step 5: Secure with SSL</h2>
-      <p>Install Certbot and generate certificates:</p>
-      <pre><code>sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d example.com -d www.example.com
-sudo certbot renew --dry-run</code></pre>
-    </section>
-  </main>
+        <div class="bubble-container">
+            <a href="#intro" class="bubble">Introduction</a>
+            <a href="#setup" class="bubble">Setup</a>
+            <a href="#commands" class="bubble">Commands</a>
+            <a href="#deploy" class="bubble">Deployment</a>
+        </div>
 
-  <footer>
-    <p>WizardBrew ✨ | NGINX Setup Guide</p>
-  </footer>
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+        <!-- INTRODUCTION -->
+        <section id="intro" class="step">
+
+            <h2>📖 Introduction</h2>
+
+            <p>
+                Welcome to the WizardBrew style template.
+                This demonstrates headers, code blocks,
+                tables, buttons, and responsive layouts.
+            </p>
+
+            <pre>
+sudo apt update
+sudo apt install nginx -y
+            </pre>
+
+        </section>
+
+
+        <!-- PINK STEP -->
+        <section id="setup" class="pink-step">
+
+            <h2>⚙️ Installation Steps</h2>
+
+            <p>
+                Follow these commands to install and start Nginx.
+            </p>
+
+            <pre>
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl status nginx
+            </pre>
+
+        </section>
+
+
+        <!-- TABLE DEMO -->
+        <section id="commands" class="step">
+
+            <h2>📋 Common Commands</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td data-label="Category">Install</td>
+                        <td data-label="Command">
+                            <code>sudo apt install nginx -y</code>
+                        </td>
+                        <td data-label="Description">
+                            Install Nginx package.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td data-label="Category">Validate</td>
+                        <td data-label="Command">
+                            <code>sudo nginx -t</code>
+                        </td>
+                        <td data-label="Description">
+                            Check configuration syntax.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td data-label="Category">Reload</td>
+                        <td data-label="Command">
+                            <code>sudo systemctl reload nginx</code>
+                        </td>
+                        <td data-label="Description">
+                            Apply changes without downtime.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- STAR LINK DEMO -->
+        <section class="step">
+
+            <h2>⭐ Important Notes</h2>
+
+            <p>
+                <a href="#" class="star-link">
+                    ★ Production Best Practices
+                </a>
+            </p>
+
+            <ul>
+                <li>Always test with <code>nginx -t</code>.</li>
+                <li>Use HTTPS for public websites.</li>
+                <li>Keep separate logs per site.</li>
+                <li>Use reload instead of restart when possible.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- DEPLOYMENT -->
+        <section id="deploy" class="step">
+
+            <h2>🚀 Deployment Workflow</h2>
+
+            <pre>
+Install Ubuntu
+    ↓
+Install Nginx
+    ↓
+Create Website
+    ↓
+Configure Site
+    ↓
+Test Configuration
+    ↓
+Reload Nginx
+    ↓
+Enable HTTPS
+            </pre>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <p>
+            Made with ❤️  WizardBrew 
+        </p>
+
+        <p>
+            © 2026 WizardBrew
+        </p>
+
+    </footer>
 
 </body>
 </html>
